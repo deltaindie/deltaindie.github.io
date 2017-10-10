@@ -61,36 +61,73 @@ location.href = "./briefing";
 		<link rel="stylesheet" href="public_html/css/home.css">
   </head>
   <body>
+    <header class="navbar">
+      <nav class="white">
+        <div class="nav-wrapper container">
+          <a href="./" class="brand-logo brand-logo-small center">
+            <img src="public_html/images/logo-delta-indie-padrao.png" width="120px" alt="logo-delta-indie-padrao" title="Logo Delta Indie Produções">
+          </a>
+          <!--<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li class="active"><a class="waves-effect waves-light" href="./"><i class="material-icons left">home</i>Início</a></li>
+            <li><a class="waves-effect waves-light" href="./blog"><i class="material-icons left">dashboard</i>Blog</a></li>
+            <li><a class="waves-effect waves-light" href="./projetos"><i class="material-icons left"></i>Portfolio</a></li>
+            <li><a class="waves-effect waves-light" href="./projetos"><i class="material-icons left"></i>Contate-nos</a></li>
+            <li><a class="waves-effect waves-light" href="./contato"><i class="material-icons left"></i>Peça um orçamento</a></li>
+          </ul>
+          <ul class="right side-nav" id="mobile-nav">
+            <div class="menu">
+              <li class="img-guilherme"><img class="circle" src="public_html/images/logo-delta-indie-padrao.png" alt="Logo"> </li>
+              <h4>Guilherme Toni</h4>
+              <li class="active"><a href="./"><i class="material-icons left">home</i>Início</a></li>
+              <li><a href="./blog"><i class="material-icons left">dashboard</i>Blog</a></li>
+              <li><a href="./projetos"><i class="material-icons left">work</i>Projetos</a></li>
+              <li><a href="./contato"><i class="material-icons left">perm_contact_calendar</i>Contato</a></li>
+            </div>
+          </ul>-->
+        </div>
+      </nav>
+    </header>
     <main class="container">
     </main>
     <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m6 l4">
-            <img class="logo-footer" src="public_html/images/logo-delta-indie-padrao.png" alt="logo-delta-indie-padrao.png" title="Logo da Delta Indie Produções">
-            <p class="grey-text text-darken-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-          </div>
-          <div class="col s12 m6 l4 offset-l1">
-            <h5><span></span>Institucional</h5>
-            <ul>
-              <li><a href="./briefing">Peça um orçamento</a></li>
-              <li><a href="#">Item 2</a></li>
-              <li><a href="#">Item 3</a></li>
-              <li><a href="#">Item 4</a></li>
-              <li><a href="#">Item 5</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
         <div class="container">
-          <span class="grey-text text-darken-4">&copy; 2017 Delta Indie Produções</span>
+          <div class="row">
+            <div class="col s12 m6 l4">
+              <img class="logo-footer" src="public_html/images/logo-delta-indie-padrao.png" alt="logo-delta-indie-padrao.png" title="Logo da Delta Indie Produções">
+              <p class="grey-text text-darken-4">
+                2017 Delta Indie Produções
+              </p>
+            </div>
+            <div class="col s12 m6 l3 offset-l1">
+              <h5><span></span>Institucional</h5>
+              <ul>
+                <li><a href="./sobre">Sobre a Delta Indie Produções</a></li>
+                <li><a href="./blog">Nosso Blog</a></li>
+                <li><a href="./contato">Entre em contato</a></li>
+                <li><a href="./portfolio">Nosso Portfolio</a></li>
+                <li><a href="./briefing">Peça um orçamento</a></li>
+              </ul>
+            </div>
+            <div class="col s12 m6 l3 offset-l1">
+                <h5><span></span>Social</h5>
+                <ul>
+                  <li><a href="#">Facebook</a></li>
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+                </ul>
+              </div>
+          </div>
         </div>
-      </div>
-    </footer>
-		<script src="public_html/js/vendor/jquery/jquery-3.1.1.min.js"></script>
-		<script src="public_html/js/vendor/materialize/materialize.min.js"></script>
+        <div class="footer-copyright">
+          <div class="container">
+            <span class="grey-text text-darken-4">&copy; 2017 Delta Indie Produções</span>
+          </div>
+        </div>
+      </footer>
+      <script src="public_html/js/vendor/jquery/jquery-3.1.1.min.js"></script>
+      <script src="public_html/js/vendor/materialize/materialize.min.js"></script>
+      <script>$(".button-collapse").sideNav();</script>
   </body>
 </html>
