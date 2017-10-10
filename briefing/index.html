@@ -8,8 +8,8 @@
     <link rel="icon" href="public_html/images/icons/br128x128.png" sizes="192x192" type="image/png">
     <link rel="author" content="Equipe Delta Indie Produções">
     <link rel="canonical" href="https://deltaindie.github.io/">
-    <base href="https://deltaindie.github.io/">
-    <!--<base href="http://localhost/deltaindie.github.io/">-->
+    <!--<base href="https://deltaindie.github.io/">-->
+    <base href="http://localhost/deltaindie.github.io/">
     <meta charset="utf-8">
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="public_html/css/vendor/materialize/materialize.min.css">
     <link rel="stylesheet" href="public_html/css/vendor/materialize/material-icons.css">
     <link rel="stylesheet" href="public_html/css/briefing.css">
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
 	</head>
 	<body>
     <header class="navbar transparent">
@@ -73,6 +74,21 @@
       <img src="public_html/images/briefing2.jpg" class="cover" alt="briefing" title="Briefing">
     </div>
     <main>
+    <div class="loading valign-wrapper" style="visibility:hidden;width:100vw;height:100vh;background:rgba(244,244,244,0.7);z-index:999;position:fixed;overflow:hidden;top:0;left:0;">
+        <div class="preloader-wrapper big active" style="width:100px;height:100px;margin:0 auto;">
+          <div class="spinner-layer spinner-yellow-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <section class="container">
         <section class="row">
           <div class="col s12 m12 l12">
@@ -82,45 +98,36 @@
                 <h4 class="sub">Conte-nos sobre o seu empreendimento!</h4>
                 <b>Questões marcadas com <span class="red-text">*</span> devem ser respondidas obrigatoriamente.</b>
                 <br><br>
-                <form id="briefing" enctype="multipart/form-data">
+                <form id="briefing">
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
-                      <input type="text" placeholder="Por ex.: Venda de roupas femininas, venda de doces e bolos" name="ramo-atuacao" id="ramo-atuacao">
+                      <input required type="text" placeholder="Por ex.: Venda de roupas femininas, venda de doces e bolos" name="ramo-atuacao" id="ramo-atuacao">
                       <label for="ramo-atuacao"><b>Quais serviços e produtos você oferece? <span class="red-text">*</span></b></label>
                       <small class="red-text" id="text-ramo-atuacao"></small>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
-                      <textarea placeholder="Insira aqui toda e qualquer informação que achar relevante sobre seus clientes" name="perfil" id="perfil" class="materialize-textarea" style="min-height: 40px;"></textarea>
+                      <textarea required placeholder="Insira aqui toda e qualquer informação que achar relevante sobre seus clientes" name="perfil" id="perfil" class="materialize-textarea" style="min-height: 40px;"></textarea>
                       <label for="perfil"><b>
                         Fale sobre o perfil dos seus clientes. (Idade, sexo, classe social, por onde costumam entrar em contato com você) <span class="red-text">*</span></b></label>
                       <small class="red-text" id="text-perfil"></small>
                     </div>
                   </section>
-                  
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
-                      <input type="text" placeholder="Insira sua resposta aqui" name="concorrentes" id="concorrentes">
+                      <input required type="text" placeholder="Insira sua resposta aqui" name="concorrentes" id="concorrentes">
                       <label for="concorrentes"><b>Você conhece outras pessoas que fazem a mesma coisa ou possui um negócio bem parecido com o que você faz? Se sim, saberia dizer o link da página ou site? <span class="red-text">*</span></b></label>
                       <small class="red-text" id="text-concorrentes"></small>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
-                      <select multiple name="ferramentas[]" id="ferramentas">
-                        <option value="" disabled selected>Escolha uma opção(Pode marcar mais de uma)</option>
-                        <option value="E-mail">E-mail</option>
-                        <option value="Facebook">Facebook</option>
-                        <option value="Instagram">Instagram</option>
-                        <option value="Twitter">Twitter</option>
-                        <option value="WhatsApp">WhatsApp</option>
-                        <option value="Outros">Outros(Informe abaixo)</option>
-                        <option value="Nenhuma">Não possuo nenhuma ferramenta de divulgação</option>
-                      </select>
-                      <label for="ferramentas"><b>Você utiliza alguma ferramenta para divulgar seu trabalho atualmente? <span class="red-text">*</span></b></label>
+                      <input required type="text" placeholder="Insira sua resposta aqui" name="ferramentas" id="ferramentas">
+                      <label for="ferramentas"><b>Você utiliza alguma ferramenta para divulgar seu trabalho atualmente?(Facebook, instagram, e-mail, twitter) <span class="red-text">*</span></b></label>
                       <small class="red-text" id="text-ferramentas"></small>
                     </div>
                   </section>
@@ -132,19 +139,19 @@
                       <label for="outras-ferramentas"><b>Outras ferramentas de divulgação</b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
-                      <input type="text" placeholder="Insira sua resposta aqui" name="logo" id="logo">
+                      <input required type="text" placeholder="Insira sua resposta aqui" name="logo" id="logo">
                       <label for="logo"><b>Você já possui logomarca? Se não, gostaria que nós criássemos uma para você?
                         <span class="red-text">*</span></b></label>
                       <small class="red-text" id="text-logo"></small>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
-                      <select name="conteudo" id="conteudo">
+                      <select required name="conteudo" id="conteudo">
                         <option value="" disabled selected>Escolha uma opção</option>
                         <option value="Somente imagens">Somente imagens</option>
                         <option value="Somente textos">Somente textos</option>
@@ -154,24 +161,24 @@
                       <label for="conteudo"><b>Já possui conteúdo? (textos, imagens) <span class="red-text">*</span></b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
                       <input type="text" placeholder="Insira aqui sua resposta" name="cores" id="cores">
                       <label for="cores"><b>Quais cores gostaria que seu site tivesse? (combinações referente a logomarca)</b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
                       <input type="text" placeholder="Insira aqui sua resposta" name="referencias" id="referencias">
                       <label for="referencias"><b>Você tem algum site que gostou? Informe o link do(s) site(s) por favor.</b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
-                      <select name="venda-produtos" id="venda-produtos">
+                      <select required name="venda-produtos" id="venda-produtos">
                         <option value="" disabled selected>Escolha uma opção</option>
                         <option value="Sim">Sim</option>
                         <option value="Não">Não</option>
@@ -179,35 +186,49 @@
                       <label for="venda-produtos"><b>Você irá vender produtos no site? <span class="red-text">*</span></b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
                       <input type="text" placeholder="Insira sua resposta aqui" name="dados" id="dados">
                       <label for="dados"><b>Será necessário pegar dados do visitante do seu site? (Nome, e-mail)</b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
                       <input type="text" placeholder="Insira sua resposta aqui" name="visitas" id="visitas">
                       <label for="visitas"><b>Por onde você acha que os visitantes irão ver seu site? (Computador, smartphone, tablet)</b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
                       <input type="text" placeholder="R$ x.xxx,xx" name="orcamento" id="orcamento">
                       <label for="orcamento"><b>Qual o orçamento estimado disponível para a realização do projeto?</b></label>
                     </div>
                   </section>
-
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l12">
                       <input type="text" placeholder="Insira sua resposta aqui" name="data-limite" id="data-limite">
                       <label for="data-limite"><b>Você tem necessidade de urgência do projeto? Se sim, qual a data limite?</b></label>
                     </div>
                   </section>
-
+                  <br>
+                  <section class="row">
+                    <div class="input-field col s12 m12 l12">
+                      <input type="text" required placeholder="Insira sua resposta aqui" name="nome-empresa" id="nome-empresa">
+                      <label for="nome-empresa"><b>Qual o nome do seu negócio? <span class="red-text">*</span></b></label>
+                    </div>
+                  </section>
+                  <br>
+                  <section class="row">
+                    <div class="input-field col s12 m12 l12">
+                      <input type="email" required placeholder="Insira sua resposta aqui" name="email-contato" id="email-contato">
+                      <label for="email-contato"><b>E-mail para contato? <span class="red-text">*</span></b></label>
+                    </div>
+                  </section>
+                  <br>
                   <section class="row">
                     <div class="input-field col s12 m12 l4">
                       <button class="btn-large btn-block" id="enviar-info">Enviar informações</button>
@@ -224,7 +245,7 @@
     <footer class="page-footer">
       <div class="container">
         <div class="row">
-          <div class="col s12 m6 l4">
+          <div class="col s12 m12 l4">
             <img class="logo-footer" src="public_html/images/logo-delta-indie-padrao.png" alt="logo-delta-indie-padrao.png" title="Logo da Delta Indie Produções">
             <p class="grey-text text-darken-4">
               2017 Delta Indie Produções
@@ -259,6 +280,8 @@
     </footer>
     <script src="public_html/js/vendor/jquery/jquery-3.1.1.min.js"></script>
     <script src="public_html/js/vendor/materialize/materialize.min.js"></script>
+    <script src="public_html/js/vendor/firebase/reference.min.js" async></script>
+    <script src="public_html/js/vendor/firebase/briefing.min.js" async></script>
     <script>$('select').material_select();$(".button-collapse").sideNav();</script>
   </body>
 </html>
