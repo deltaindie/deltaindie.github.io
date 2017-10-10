@@ -1,0 +1,61 @@
+label {
+  b {
+    font-size: 17px !important;
+  }
+}
+
+input,
+select,
+textarea {
+  font-size: 15px !important;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  a {
+    color: #4d4d4d;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  footer.page-footer {
+    
+    >.container {
+      border-top: 1px solid #ccc;
+      
+      ul {
+        li {
+          margin-left: 15px;
+          a {
+            transition: all .2s linear;
+            
+            &:hover {
+              padding-left: 7px;
+              transition: all .2s linear;
+            }
+          }
+        }
+      }
+
+      h5 {
+        margin-top: 30px;
+        font-variant: small-caps;
+        color: #ab37c8;
+
+        >span {
+          display: inline-block;
+          background-color: #4d4d4d;
+          width: 3px;
+          height: 20px;
+          margin-right: 4px;
+          vertical-align: -1px;
+        }
+      }
+    }
+  }
+}

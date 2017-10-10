@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br" prefix="og: http://ogp.me/ns#">
+	<head>
+    <link rel="icon" href="public_html/images/icons/br16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="public_html/images/icons/br32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="public_html/images/icons/br48x48.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="public_html/images/icons/br64x64.png" sizes="62x62" type="image/png">
+    <link rel="icon" href="public_html/images/icons/br128x128.png" sizes="192x192" type="image/png">
+    <link rel="author" content="Equipe Delta Indie Produções">
+    <link rel="canonical" href="https://deltaindie.github.io/">
+    <base href="https://deltaindie.github.io/">
+    <!--<base href="http://localhost/deltaindie.github.io/">-->
+    <meta charset="utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#">
+    <meta name="msapplication-navbutton-color" content="#">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Página para visualização dos briefings cadastrados no site da empresa Delta Indie Produções">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="imagemode" content="force">
+    <meta name="nightmode" content="disable">
+    <meta name="url" content="https://deltaindie.github.io/briefing">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="summary" content="Página para visualização dos briefings cadastrados no site da empresa Delta Indie Produções">
+    <meta name="rating" content="general">
+    <meta name="generator" content="VS Code">
+    <meta name="copyright" content="© 2017 Delta Indie Produções">
+    <meta itemprop="name" content="Delta Indie Produções">
+    <meta itemprop="description" content="Página para visualização dos briefings cadastrados no site da empresa Delta Indie Produções">
+    <meta itemprop="image" content="https://deltaindie.github.io/public_html/images/logo-delta-indie-padrao.png">
+    <link href="https://plus.google.com/+DeltaIndieProducoes" rel="publisher">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Delta Indie Produções">
+    <meta name="twitter:url" content="https://deltaindie.github.io/briefing">
+    <meta name="twitter:description" content="Página para visualização dos briefings cadastrados no site da empresa Delta Indie Produções">
+    <meta name="twitter:image" content="https://deltaindie.github.io/public_html/images/logo-delta-indie-padrao.png">
+    <meta name="twitter:creator" content="@deltaindie">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deltaindie.github.io/briefing">
+    <meta property="og:title" content="Delta Indie Produções">
+    <meta property="og:description" content="Página para visualização dos briefings cadastrados no site da empresa Delta Indie Produções">
+    <meta property="og:site_name" content="Delta Indie Produções">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="article:author" content="Equipe Delta Indie Produções">
+    <meta property="og:image" content="https://deltaindie.github.io/public_html/images/logo-delta-indie-padrao.png">
+    <meta property="og:title" content="Delta Indie Produções">
+    <meta property="og:description" content="Página para visualização dos briefings cadastrados no site da empresa Delta Indie Produções">
+    <meta property="og:url" content="https://deltaindie.github.io/briefing">
+    <meta property="og:image" content="https://deltaindie.github.io/public_html/images/logo-delta-indie-padrao.png">
+    <title>Delta Indie Produções</title>
+    <link rel="stylesheet" href="public_html/css/vendor/materialize/materialize.min.css">
+    <link rel="stylesheet" href="public_html/css/vendor/materialize/material-icons.css">
+    <link rel="stylesheet" href="public_html/css/briefing-read.css">
+    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+	</head>
+	<body>
+    <header class="navbar transparent">
+      <nav class="transparent">
+        <div class="nav-wrapper container transparent">
+          <a href="./" class="brand-logo center">
+            <img src="public_html/images/logo-delta-indie-padrao.png" width="120px" alt="logo-delta-indie-padrao" title="Logo Delta Indie Produções">
+          </a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="container">
+        <section class="row">
+          <div class="col s12 m12 l12">
+            <h3>Briefing</h3>
+            <section class="row" id="app">
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 m12 l4">
+            <img class="logo-footer" src="public_html/images/logo-delta-indie-padrao.png" alt="logo-delta-indie-padrao.png" title="Logo da Delta Indie Produções">
+            <p class="grey-text text-darken-4">
+              2017 Delta Indie Produções
+            </p>
+          </div>
+          <div class="col s12 m6 l3 offset-l1">
+            <h5><span></span>Institucional</h5>
+            <ul>
+              <li><a href="javascript:void(0);">Sobre a Delta Indie Produções</a></li>
+              <li><a href="javascript:void(0);">Nosso Blog</a></li>
+              <li><a href="javascript:void(0);">Entre em contato</a></li>
+              <li><a href="javascript:void(0);">Nosso Portfolio</a></li>
+              <li><a href="./briefing">Peça um orçamento</a></li>
+            </ul>
+          </div>
+          <div class="col s12 m6 l3 offset-l1">
+              <h5><span></span>Social</h5>
+              <ul>
+                <li><a href="javascript:void(0);">Facebook</a></li>
+                <li><a href="javascript:void(0);">Instagram</a></li>
+                <li><a href="javascript:void(0);">Twitter</a></li>
+                <li><a href="javascript:void(0);">LinkedIn</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span class="grey-text text-darken-4">&copy; 2017 Delta Indie Produções</span>
+        </div>
+      </div>
+    </footer>
+    <script src="public_html/js/vendor/jquery/jquery-3.1.1.min.js"></script>
+    <script src="public_html/js/vendor/materialize/materialize.min.js"></script>
+    <script src="public_html/js/vendor/firebase/reference.min.js" async></script>
+    <script src="public_html/js/vendor/firebase/briefing-read.min.js" async></script>
+    <script>$(".button-collapse").sideNav();</script>
+  </body>
+</html>
