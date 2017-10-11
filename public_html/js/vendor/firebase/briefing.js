@@ -13,7 +13,7 @@ var sendData = {
   "referencias": "",
   "dados": "",
   "visitas": "",
-  "orcamento": "",
+  "idiomas": "",
   "data-limite": ""
 };
 
